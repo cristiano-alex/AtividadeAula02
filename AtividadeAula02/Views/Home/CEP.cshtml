@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "CEP";
+}
+
+<form asp-action="Cadastrar" asp-controller="Home">
+    <fieldset>
+        <legend>Consultar CEP</legend>
+        <div class="form-group">
+            <label>CEP</label>
+            <input class="form-control" type="text" id="cep" />
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="BuscarCep()" class="btn btn-info"> Buscar </button>
+        </div>
+        <div class="form-group">
+            <label>Rua</label>
+            <input class="form-control" type="text" id="rua" />
+        </div>
+        <div class="form-group">
+            <label>Bairro</label>
+            <input class="form-control" type="text" id="bairro" />
+        </div>
+
+        <div class="form-group">
+            <label>Cidade</label>
+            <input class="form-control" type="text" id="cidade" />
+        </div>
+        <div class="form-group">
+            <label>Estado</label>
+            <input class="form-control" type="text" id="estado" />
+        </div>
+
+        <div class="form-group">
+            <label>Codigo IBGE Estado</label>
+            <input class="form-control" type="text" id="codEstado" />
+        </div>
+
+        <div class="form-group">
+            <label>Codigo IBGE Cidade</label>
+            <input class="form-control" type="text" id="codCidade" />
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-success" type="submit" value="Cadastrar" />
+        </div>
+    </fieldset>
+</form>
+
+<script>
+
+    var txtCep = document.getElementById("cep");
+    var txtRua = document.getElementById("rua");
+    var txtBairro = document.getElementById("bairro");
+    var txtCidade = document.getElementById("cidade");
+    var txtEstado = document.getElementById("estado");
+    var txtCodEstado = document.getElementById("codEstado");
+    var txtCodCidade = document.getElementById("codCidade");
+
+    function BuscarCep() {
+        let cep = txtCep.value;
+        let url = `https://api.postmon.com.br/v1/cep/${cep}`;
+        fetch(url)
+            .then(result => result.json())
+            .then(json => {
+                txtRua.value = json.logradouro;
+                txtBairro.value = json.bairro;
+                txtCidade.value = json.cidade;
+                txtEstado.value = json.estado_info.nome;
+                txtCodEstado.value = json.estado_info.codigo_ibge;
+                txtCodCidade.value = json.cidade_info.codigo_ibge;
+            })
+            .catch(error => console.log(error));
+    };
+
+</script>
+

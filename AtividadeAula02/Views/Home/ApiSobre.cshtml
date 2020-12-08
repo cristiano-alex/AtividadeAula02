@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "ApiSobre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <h1>API Utilizada</h1>
+</header>
+
+<section id="downloads" class="clearfix">
+    <a href="https://github.com/CodingForChange/postmon" id="view-on-github" class="button"><span>GitHub</span></a>
+    <a href="https://postmon.com.br/" id="view-on-github" class="button"><span>Site API</span></a>
+</section>
+
+
+<hr>
+
+<section id="what_content">
+    <h1>Postmon</h1>
+
+    <p>Postmon e uma API para consultar CEP e encomendas de maneira fácil, rápida e gratuita.</p>
+
+</section>
+
+<hr>
+
+<section id="how_content">
+    <h1>Como utilizar?</h1>
+
+    <p>A versão atual da API é a 1.x.x</p>
+
+    <p>Como é uma API baseada em REST, basta fazer a seguinte chamada para consultar um CEP:</p>
+    <code>https://api.postmon.com.br/v1/cep/*cep_a_consultar*</code>
+    <p>Onde *cep_a_consultar* é o número do CEP que deseja consultar as informações. O resultado é retornado em formato JSON</p>
+    <p>Para obter o retorno em formato <i>XML<i />, basta acrescentar <code>?format=xml</code> no final da requisição.</p>
+
+    <p>Para o projeto foi utilizado apenas a por CEP.</p>
+
+    <p>para o caso de ele nao encontrar o CEP foi adicionado uma validação na busca que devolve como CEP Inexistente ou Invalidado</p>
+
+    <p>Aluno: Cristiono Alex dos Santos</p>
+    <p>Matricula: 1528706</p>
+
+
+</section>
+
+
+
+

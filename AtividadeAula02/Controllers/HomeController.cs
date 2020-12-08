@@ -21,13 +21,20 @@ namespace AtividadeAula02.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_context.ceps.ToList());
         }
 
-        public IActionResult Privacy()
+
+        public IActionResult ApiUtil()
         {
             return View();
         }
+
+        public IActionResult ApiSobre()
+        {
+            return View();
+        }
+
 
         public IActionResult CEP()
         {

@@ -62,7 +62,7 @@ namespace AtividadeAula02.Controllers
             cep.CriadoEm = DateTime.Now;
             _context.ceps.Add(cep);
             _context.SaveChanges();
-            return Created("", lista);
+            return Created("", cep);
         }
 
         //PUT: /api/cep/alterar
@@ -95,7 +95,7 @@ namespace AtividadeAula02.Controllers
             _context.ceps.Remove(item);
             _context.SaveChanges();
 
-            return NoContent();
+            return Ok(new { msg = "Registro Excluido com Sucesso!!!" });
         }
     }
     

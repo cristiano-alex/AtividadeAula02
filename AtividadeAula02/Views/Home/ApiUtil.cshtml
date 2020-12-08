@@ -4,5 +4,190 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>ApiUtil</h1>
+<header>
+    <h1>Requisições HTTP</h1>
+</header>
 
+<div>
+    <h2>Listando todos os Enderecos</h2>
+
+    <h2>[GET]</h2>
+    <h3>Request</h3>
+    <link>https://localhost:44372/api/cep/listar</>
+
+    <h3>Response</h3>
+    <code>
+
+        {
+        "id": 2,
+        "cep": "81720240",
+        "logradouro": "Rua Júlio Zandoná",
+        "bairro": "Alto Boqueirão",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "cod_IBGE_Estado": "41",
+        "cod_IBGE_Cidade": "4106902",
+        "criadoEm": "0001-01-01T00:00:00"
+        },
+        {
+        "id": 3,
+        "cep": null,
+        "logradouro": "Rua Jorge Brey",
+        "bairro": "Alto Boqueirão",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "cod_IBGE_Estado": "41",
+        "cod_IBGE_Cidade": "4106902",
+        "criadoEm": "0001-01-01T00:00:00"
+        },
+        {
+        "id": 4,
+        "cep": null,
+        "logradouro": "Rua Alberto Müller Sobrinho",
+        "bairro": "Portão",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "cod_IBGE_Estado": "41",
+        "cod_IBGE_Cidade": "4106902",
+        "criadoEm": "0001-01-01T00:00:00"
+        },
+        {
+        "id": 5,
+        "cep": "81720240",
+        "logradouro": "Rua Júlio Zandoná",
+        "bairro": "Alto Boqueirão",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "cod_IBGE_Estado": "41",
+        "cod_IBGE_Cidade": "4106902",
+        "criadoEm": "0001-01-01T00:00:00"
+        },
+        {
+        "id": 7,
+        "cep": "00000000",
+        "logradouro": "Rua Teste",
+        "bairro": "Bairro teste",
+        "cidade": "Cidade teste",
+        "estado": "Estado Teste",
+        "cod_IBGE_Estado": "25365",
+        "cod_IBGE_Cidade": "2567356273",
+        "criadoEm": "2020-12-08T01:16:47.5823674"
+        }
+        ]
+    </code>
+</div>
+
+<div>
+
+    <h2>[GET]</h2>
+    <h3>Request</h3>
+    <link>https://localhost:44372/api/cep/buscar/2</>
+
+    <h3>Response</h3>
+
+    <code>
+        {
+        "id": 2,
+        "cep": "81720240",
+        "logradouro": "Rua Júlio Zandoná",
+        "bairro": "Alto Boqueirão",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "cod_IBGE_Estado": "41",
+        "cod_IBGE_Cidade": "4106902",
+        "criadoEm": "0001-01-01T00:00:00"
+        }
+    </code>
+
+</div>
+
+<div>
+
+    <h2>[POST]</h2>
+    <h3>Request</h3>
+    <link>https://localhost:44372/api/cep/Cadastrar</>
+    <code>
+        {
+        "Cep": "00000000",
+        "Logradouro": "Rua Teste",
+        "Bairro": "Bairro teste",
+        "Cidade": "Cidade teste",
+        "Estado": "Estado Teste",
+        "Cod_IBGE_Estado": "25365",
+        "Cod_IBGE_Cidade": "2567356273"
+
+
+        }
+    </code>
+
+    <h3>Response</h3>
+
+    <code>
+        {
+        "id": 2,
+        "cep": "81720240",
+        "logradouro": "Rua Júlio Zandoná",
+        "bairro": "Alto Boqueirão",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "cod_IBGE_Estado": "41",
+        "cod_IBGE_Cidade": "4106902",
+        "criadoEm": "0001-01-01T00:00:00"
+        }
+    </code>
+
+</div>
+
+<div>
+
+    <h2>[POST]</h2>
+    <h3>Request</h3>
+    <link>https://localhost:44372/api/cep/alterar/2</>
+    <code>
+        {
+        "id": 2,
+        "cep": "81720240",
+        "logradouro": "Rua Júlio Zandoná",
+        "bairro": "Alto Boqueirão",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "cod_IBGE_Estado": "41",
+        "cod_IBGE_Cidade": "4106902",
+        "criadoEm": "0001-01-01T00:00:00"
+        }
+    </code>
+
+    <h3>Response</h3>
+
+    <code>
+        {
+        "id": 2,
+        "cep": "81720240",
+        "logradouro": "Rua Júlio Zandoná",
+        "bairro": "Alto Boqueirão",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "cod_IBGE_Estado": "41",
+        "cod_IBGE_Cidade": "4106902",
+        "criadoEm": "0001-01-01T00:00:00"
+        }
+    </code>
+
+</div>
+
+
+<div>
+
+    <h2>[DELETE]</h2>
+    <h3>Request</h3>
+    <link>https://localhost:44372/api/cep/deletar/6</>
+
+    <h3>Response</h3>
+
+    <code>
+        {
+        "msg": "Registro Excluido com Sucesso!!!"
+        }
+    </code>
+
+</div>

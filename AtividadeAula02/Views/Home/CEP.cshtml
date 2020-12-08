@@ -1,9 +1,9 @@
-﻿
+﻿@model CEP
 @{
     ViewData["Title"] = "CEP";
 }
 
-<form asp-action="Cadastrar" asp-controller="Home">
+<form asp-action="CEP" asp-controller="Home">
     <fieldset>
         <legend>Consultar CEP</legend>
         <div class="form-group">
@@ -15,30 +15,30 @@
         </div>
         <div class="form-group">
             <label>Rua</label>
-            <input class="form-control" type="text" id="rua" />
+            <input class="form-control" type="text" id="rua" asp-for="Logradouro" />
         </div>
         <div class="form-group">
             <label>Bairro</label>
-            <input class="form-control" type="text" id="bairro" />
+            <input class="form-control" type="text" id="bairro" asp-for="Bairro" />
         </div>
 
         <div class="form-group">
             <label>Cidade</label>
-            <input class="form-control" type="text" id="cidade" />
+            <input class="form-control" type="text" id="cidade" asp-for="Cidade" />
         </div>
         <div class="form-group">
             <label>Estado</label>
-            <input class="form-control" type="text" id="estado" />
+            <input class="form-control" type="text" id="estado" asp-for="Estado" />
         </div>
 
         <div class="form-group">
             <label>Codigo IBGE Estado</label>
-            <input class="form-control" type="text" id="codEstado" />
+            <input class="form-control" type="text" id="codEstado" asp-for="Cod_IBGE_Estado" />
         </div>
 
         <div class="form-group">
             <label>Codigo IBGE Cidade</label>
-            <input class="form-control" type="text" id="codCidade" />
+            <input class="form-control" type="text" id="codCidade" asp-for="Cod_IBGE_Cidade" />
         </div>
 
         <div class="form-group">

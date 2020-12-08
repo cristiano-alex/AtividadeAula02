@@ -11,11 +11,12 @@ namespace AtividadeAula02.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly Context _context;
+
+        public HomeController(Context context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -28,15 +29,17 @@ namespace AtividadeAula02.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
         public IActionResult CEP()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult CEP(CEP c)
+        {
+            _context.ceps.Add(c);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
